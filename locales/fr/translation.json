@@ -1,0 +1,120 @@
+{
+  "navbar": {
+    "home": "Accueil",
+    "about": "À propos",
+    "expertise": "Expertise",
+    "experience": "Expérience",
+    "projects": "Projets",
+    "contact": "Contact",
+    "language": "Langue"
+  },
+  "hero": {
+    "greeting": "Bonjour, je m'appelle",
+    "headline": "Je crée des solutions web.",
+    "description": "Développeur web & logiciel spécialisé dans la création d'expériences numériques uniques. Actuellement à la recherche d'un nouveau défi.",
+    "cta": "Voir mes projets",
+    "contact": "Me contacter"
+  },
+  "about": {
+    "title": "À Propos de Moi",
+    "paragraph1": "Je suis un développeur Full Stack polyvalent avec une solide base en programmation bas niveau et haut niveau. Mon parcours dans la technologie a commencé par une immersion dans la programmation système en C et C++, ce qui m'a donné une compréhension approfondie de l'architecture des ordinateurs et de l'optimisation des performances.",
+    "paragraph2": "Mon expertise s'étend sur toute la pile de développement, des systèmes backend aux applications web modernes. Je me spécialise dans la création d'applications robustes et évolutives utilisant React.js, Node.js et TypeScript, tout en maintenant un œil attentif sur les performances et l'expérience utilisateur.",
+    "paragraph3": "Avec une expérience dans la conteneurisation avec Docker et une maîtrise de divers outils et frameworks de développement, j'apporte une approche complète au développement logiciel. Je suis particulièrement passionné par la création de code efficace et maintenable, et par la mise en œuvre des meilleures pratiques en génie logiciel.",
+    "paragraph4": "Au-delà du code, je suis compétent en gestion de projet et en collaboration d'équipe, avec une forte maîtrise de l'anglais technique et professionnel. Je m'épanouis dans les environnements dynamiques où je peux exploiter mes compétences diverses pour fournir des solutions de haute qualité."
+  },
+  "expertise": {
+    "title": "Domaines d'Expertise",
+    "seeSkills": "Voir les compétences",
+    "fullstack": {
+      "title": "Développement Full Stack",
+      "description": "Compétent dans la création d'applications de bout en bout utilisant des technologies web modernes. Expérimenté en développement frontend et backend avec un accent sur la performance et l'évolutivité.",
+      "category": "Développement Web"
+    },
+    "systems": {
+      "title": "Programmation Système",
+      "description": "Solide base en programmation bas niveau avec C/C++, compréhension de l'architecture des ordinateurs et expérience en optimisation des performances.",
+      "category": "Langages de Programmation"
+    },
+    "testing": {
+      "title": "Tests & APIs",
+      "description": "Compétent dans la mise en œuvre de stratégies de test complètes et l'intégration de diverses APIs pour améliorer la fonctionnalité des applications.",
+      "category": "Tests & APIs"
+    },
+    "devops": {
+      "title": "DevOps & Outils",
+      "description": "Expérience avec Docker pour la conteneurisation, Git pour le contrôle de version, et divers IDE pour des flux de travail de développement efficaces.",
+      "category": "Outils de Développement"
+    },
+    "design": {
+      "title": "Design & Productivité",
+      "description": "Compétent dans la création d'interfaces utilisateur intuitives et la gestion efficace de projets avec des outils modernes de design et de productivité.",
+      "category": "Design & Productivité"
+    },
+    "languages": {
+      "title": "Langues",
+      "description": "Maîtrise de plusieurs langues, permettant une communication efficace dans des environnements de développement internationaux.",
+      "category": "Langues",
+      "french": "Français Natif",
+      "english": "Anglais Technique Avancé"
+    }
+  },
+  "experience": {
+    "title": "Expérience",
+    "education": "Formation",
+    "moove": {
+      "title": "Développeur Full Stack TypeScript",
+      "company": "Moove (Stage)",
+      "period": "Fév. 2024 - Juin 2024 · 5 mois · Paris, Île-de-France (Hybride)",
+      "description": "Moove est une startup développant une solution 'Uber like' dans le secteur de l'avion d'affaires. Missions variées : corrections de bugs, développement de nouvelles fonctionnalités (CRM, page Analytics), nombreux tests end to end (E2E) pour assurer la qualité du site."
+    },
+    "optivvia": {
+      "title": "Développeur Full Stack .Net",
+      "company": "OPTIVVIA (Alternance)",
+      "period": "Oct. 2023 - Janv. 2024 · 4 mois · Paris, Île-de-France (Sur site)",
+      "description": "Création d'une carte 'GeoRisk' pour visualiser les sites couverts par les assureurs et les zones à risque naturel. Intégration de la carte à la solution d'Optivvia pour faciliter la visualisation des clients et des risques."
+    },
+    "directemploi": {
+      "title": "Développeur Full Stack",
+      "company": "Direct Emploi (Stage)",
+      "period": "Juin 2022 - Janv. 2023 · 8 mois · Paris, Île-de-France (Sur site)",
+      "description": "Mise à jour du code d'un site avec des outils récents et refonte de l'interface selon une maquette moderne. Objectif : moderniser le fond et la forme du site."
+    },
+    "epitech": {
+      "school": "Epitech - L'école de l'excellence informatique",
+      "degree": "Informatique",
+      "period": "Oct. 2021 - Juin 2026",
+      "location": "Paris, France",
+      "description": "Formation d'excellence en informatique. Projets, travail en équipe, développement logiciel avancé."
+    },
+    "bit": {
+      "school": "北京理工大学 (Beijing Institute of Technology)",
+      "degree": "Programmation informatique (Échange)",
+      "period": "Oct. 2024 - Juin 2025",
+      "location": "Pékin, Chine",
+      "description": "Étudiant en échange en informatique, le programme international de 4ème année d'Epitech me permet de découvrir la Chine et d'apprendre l'informatique d'une manière différente."
+    }
+  },
+  "contact": {
+    "title": "Me Contacter",
+    "subtitle": "Prenons Contact",
+    "description": "N'hésitez pas à me contacter pour toute question ou opportunité.",
+    "email": {
+      "label": "Email"
+    },
+    "location": {
+      "label": "Localisation",
+      "value": "Paris, France"
+    },
+    "form": {
+      "name": "Nom",
+      "email": "Email",
+      "message": "Message",
+      "submit": "Envoyer",
+      "sending": "Envoi en cours...",
+      "success": "Message envoyé avec succès ! Je vous répondrai bientôt.",
+      "error": "Oups ! Une erreur s'est produite. Veuillez réessayer plus tard.",
+      "cooldown": "Veuillez patienter {{seconds}} secondes avant d'envoyer un autre message.",
+      "nextSend": "Prochain message dans"
+    }
+  }
+} 
