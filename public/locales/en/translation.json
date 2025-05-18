@@ -1,0 +1,120 @@
+{
+  "navbar": {
+    "home": "Home",
+    "about": "About",
+    "expertise": "Expertise",
+    "experience": "Experience",
+    "projects": "Projects",
+    "contact": "Contact",
+    "language": "Language"
+  },
+  "hero": {
+    "greeting": "Hi, my name is",
+    "headline": "I build things for the web.",
+    "description": "I'm a web & software developer specializing in building unique digital experiences. Currently searching for a new challenge.",
+    "cta": "View My Work",
+    "contact": "Contact Me"
+  },
+  "about": {
+    "title": "About Me",
+    "paragraph1": "I am a versatile Full Stack Developer with a strong foundation in both low-level and high-level programming. My journey in technology began with a deep dive into systems programming using C and C++, which has given me a solid understanding of computer architecture and performance optimization.",
+    "paragraph2": "My expertise spans across the entire development stack, from backend systems to modern web applications. I specialize in building robust, scalable applications using React.js, Node.js, and TypeScript, while maintaining a keen eye for performance and user experience.",
+    "paragraph3": "With experience in containerization using Docker and proficiency in various development tools and frameworks, I bring a comprehensive approach to software development. I'm particularly passionate about creating efficient, maintainable code and implementing best practices in software engineering.",
+    "paragraph4": "Beyond coding, I'm skilled in project management and team collaboration, with a strong command of both technical and business English. I thrive in dynamic environments where I can leverage my diverse skill set to deliver high-quality solutions."
+  },
+  "expertise": {
+    "title": "Areas of Expertise",
+    "seeSkills": "See skills",
+    "fullstack": {
+      "title": "Full Stack Development",
+      "description": "Proficient in building end-to-end applications using modern web technologies. Experienced in both frontend and backend development with a focus on performance and scalability.",
+      "category": "Web Development"
+    },
+    "systems": {
+      "title": "Systems Programming",
+      "description": "Strong foundation in low-level programming with C/C++, understanding of computer architecture, and experience in performance optimization.",
+      "category": "Programming Languages"
+    },
+    "testing": {
+      "title": "Testing & APIs",
+      "description": "Skilled in implementing comprehensive testing strategies and integrating various APIs to enhance application functionality.",
+      "category": "Testing & APIs"
+    },
+    "devops": {
+      "title": "DevOps & Tools",
+      "description": "Experience with Docker for containerization, Git for version control, and various IDEs for efficient development workflows.",
+      "category": "Development Tools"
+    },
+    "design": {
+      "title": "Design & Productivity",
+      "description": "Proficient in creating intuitive user interfaces and managing projects efficiently using modern design and productivity tools.",
+      "category": "Design & Productivity"
+    },
+    "languages": {
+      "title": "Languages",
+      "description": "Fluent in multiple languages, enabling effective communication in international development environments.",
+      "category": "Languages",
+      "french": "Native French",
+      "english": "Advanced Technical English"
+    }
+  },
+  "experience": {
+    "title": "Experience",
+    "education": "Education",
+    "moove": {
+      "title": "Full Stack TypeScript Developer",
+      "company": "Moove (Internship)",
+      "period": "Feb. 2024 - June 2024 · 5 months · Paris, Île-de-France (Hybrid)",
+      "description": "Moove is a startup developing an 'Uber-like' solution in the private aviation sector. Various missions: bug fixes, development of new features (CRM, Analytics page), numerous end-to-end (E2E) tests to ensure site quality."
+    },
+    "optivvia": {
+      "title": "Full Stack .Net Developer",
+      "company": "OPTIVVIA (Apprenticeship)",
+      "period": "Oct. 2023 - Jan. 2024 · 4 months · Paris, Île-de-France (On-site)",
+      "description": "Creation of a 'GeoRisk' map to visualize sites covered by insurers and natural risk zones. Integration of the map into Optivvia's solution to facilitate visualization of clients and risks."
+    },
+    "directemploi": {
+      "title": "Full Stack Developer",
+      "company": "Direct Emploi (Internship)",
+      "period": "June 2022 - Jan. 2023 · 8 months · Paris, Île-de-France (On-site)",
+      "description": "Updated site code with recent tools and redesigned interface according to modern mockup. Objective: modernize both the backend and frontend of the site."
+    },
+    "epitech": {
+      "school": "Epitech - School of Computer Science Excellence",
+      "degree": "Computer Science",
+      "period": "Oct. 2021 - June 2026",
+      "location": "Paris, France",
+      "description": "Excellence training in computer science. Projects, teamwork, advanced software development."
+    },
+    "bit": {
+      "school": "Beijing Institute of Technology",
+      "degree": "Computer Programming (Exchange)",
+      "period": "Oct. 2024 - June 2025",
+      "location": "Beijing, China",
+      "description": "Exchange student in computer science, Epitech's 4th year international program allows me to discover China and learn computer science a different way."
+    }
+  },
+  "contact": {
+    "title": "Contact Me",
+    "subtitle": "Get in Touch",
+    "description": "Feel free to reach out to me for any questions or opportunities.",
+    "email": {
+      "label": "Email"
+    },
+    "location": {
+      "label": "Location",
+      "value": "Paris, France"
+    },
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "submit": "Send Message",
+      "sending": "Sending...",
+      "success": "Message sent successfully! I'll get back to you soon.",
+      "error": "Oops! Something went wrong. Please try again later.",
+      "cooldown": "Please wait {{seconds}} seconds before sending another message.",
+      "nextSend": "Next message in"
+    }
+  }
+} 
