@@ -6,7 +6,7 @@ const projects = [
   {
     title: "Area",
     description: "A React/NodeJS automation platform similar to IFTTT/Zapier. This project enables users to create automated workflows and connect different services together.",
-    image: `${PUBLIC_URL}/images/area.png`,
+    image: process.env.PUBLIC_URL + "/images/area.png",
     technologies: ["React", "Node.js", "TypeScript", "REST API"],
     github: "https://github.com/Noahxel/Area",
     live: "#"
@@ -14,7 +14,7 @@ const projects = [
   {
     title: "Zappy",
     description: "A Python/C/C++ network zero-player game featuring AI team contests. Complex project combining server architecture, GUI visualization, and artificial intelligence.",
-    image: `${PUBLIC_URL}/images/zappy.png`,
+    image: process.env.PUBLIC_URL + "/images/zappy.png",
     technologies: ["Python", "C", "C++", "Network Programming", "AI"],
     github: "https://github.com/Noahxel/Zappy",
     live: "#"
@@ -22,7 +22,7 @@ const projects = [
   {
     title: "R-Type",
     description: "A C++ cross-platform multiplayer R-Type game. A modern recreation of the classic 1987 shoot 'em up arcade game with network multiplayer support.",
-    image: `${PUBLIC_URL}/images/rtype.png`,
+    image: process.env.PUBLIC_URL + "/images/rtype.png",
     technologies: ["C++", "SFML", "Network Programming", "Game Development"],
     github: "https://github.com/Noahxel/R-Type",
     live: "#"
@@ -30,7 +30,7 @@ const projects = [
   {
     title: "DanteStar",
     description: "A C maze generator and solver implementing advanced pathfinding algorithms and procedural generation techniques.",
-    image: `${PUBLIC_URL}/images/dantestar.png`,
+    image: process.env.PUBLIC_URL + "/images/dantestar.png",
     technologies: ["C", "Algorithms", "Pathfinding"],
     github: "https://github.com/Noahxel/DanteStar",
     live: "#"
@@ -38,7 +38,7 @@ const projects = [
   {
     title: "MyRPG",
     description: "An ambitious RPG game built from scratch in C, featuring custom game engine, graphics rendering, and game mechanics.",
-    image: `${PUBLIC_URL}/images/myrpg.png`,
+    image: process.env.PUBLIC_URL + "/images/myrpg.png",
     technologies: ["C", "Game Development", "CSFML"],
     github: "https://github.com/Noahxel/MyRPG",
     live: "#"
@@ -46,7 +46,7 @@ const projects = [
   {
     title: "Arcade",
     description: "C++ Arcade games combined with dynamic graphic libraries. A versatile gaming platform that supports multiple graphic engines and game types.",
-    image: `${PUBLIC_URL}/images/arcade.png`,
+    image: process.env.PUBLIC_URL + "/images/arcade.png",
     technologies: ["C++", "SDL2", "SFML", "NCurses"],
     github: "https://github.com/Noahxel/Arcade",
     live: "#"
