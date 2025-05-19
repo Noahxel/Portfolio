@@ -91,7 +91,7 @@ const Hero = ({ onPageChange }: HeroProps) => {
               {/* Profile image container */}
               <div className="absolute inset-8 rounded-full overflow-hidden bg-gradient-to-br from-secondary via-secondary to-transparent backdrop-blur-sm">
                 <img
-                  src="/images/profile.jpg"
+                  src={process.env.PUBLIC_URL + "/images/profile.jpg"}
                   alt="Noah Le Veve"
                   className="w-full h-full object-cover rounded-full p-2"
                 />

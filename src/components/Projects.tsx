@@ -1,7 +1,5 @@
 import { motion } from 'framer-motion';
 
-const PUBLIC_URL = process.env.PUBLIC_URL || '';
-
 const projects = [
   {
     title: "Area",
