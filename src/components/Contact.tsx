@@ -1,14 +1,14 @@
-import { motion } from 'framer-motion';
-import { useState, useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
-import emailjs from '@emailjs/browser';
+import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
+import emailjs from "@emailjs/browser";
 
 const EMAIL = "noah.le-veve@epitech.eu";
 
 // Replace these with your actual EmailJS credentials
-const EMAILJS_SERVICE_ID = "service_ld3z6gc";
-const EMAILJS_TEMPLATE_ID = "template_g6g2yyj";
-const EMAILJS_PUBLIC_KEY = "ahZtlH2HdBhTAv-i9";
+const EMAILJS_SERVICE_ID = process.env.REACT_APP_EMAILJS_SERVICE_ID || "";
+const EMAILJS_TEMPLATE_ID = process.env.REACT_APP_EMAILJS_TEMPLATE_ID || "";
+const EMAILJS_PUBLIC_KEY = process.env.REACT_APP_EMAILJS_PUBLIC_KEY || "";
 
 // 5 minutes in milliseconds
 const COOLDOWN_PERIOD = 5 * 60 * 1000;
@@ -16,27 +16,29 @@ const COOLDOWN_PERIOD = 5 * 60 * 1000;
 const Contact = () => {
   const { t } = useTranslation();
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
+    name: "",
+    email: "",
+    message: "",
   });
   const [status, setStatus] = useState<{
-    type: 'success' | 'error' | 'warning' | null;
+    type: "success" | "error" | "warning" | null;
     message: string;
   }>({
     type: null,
-    message: ''
+    message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [cooldownRemaining, setCooldownRemaining] = useState(0);
 
   useEffect(() => {
     // Check remaining cooldown on component mount
-    const lastSendTime = localStorage.getItem('lastEmailSendTime');
+    const lastSendTime = localStorage.getItem("lastEmailSendTime");
     if (lastSendTime) {
       const timeSinceLastSend = Date.now() - parseInt(lastSendTime);
       if (timeSinceLastSend < COOLDOWN_PERIOD) {
-        setCooldownRemaining(Math.ceil((COOLDOWN_PERIOD - timeSinceLastSend) / 1000));
+        setCooldownRemaining(
+          Math.ceil((COOLDOWN_PERIOD - timeSinceLastSend) / 1000)
+        );
       }
     }
   }, []);
@@ -46,7 +48,7 @@ const Contact = () => {
     let timer: NodeJS.Timeout;
     if (cooldownRemaining > 0) {
       timer = setInterval(() => {
-        setCooldownRemaining(prev => {
+        setCooldownRemaining((prev) => {
           if (prev <= 1) {
             clearInterval(timer);
             return 0;
@@ -62,22 +64,24 @@ const Contact = () => {
     e.preventDefault();
 
     // Check cooldown
-    const lastSendTime = localStorage.getItem('lastEmailSendTime');
+    const lastSendTime = localStorage.getItem("lastEmailSendTime");
     if (lastSendTime) {
       const timeSinceLastSend = Date.now() - parseInt(lastSendTime);
       if (timeSinceLastSend < COOLDOWN_PERIOD) {
-        const remainingTime = Math.ceil((COOLDOWN_PERIOD - timeSinceLastSend) / 1000);
+        const remainingTime = Math.ceil(
+          (COOLDOWN_PERIOD - timeSinceLastSend) / 1000
+        );
         setCooldownRemaining(remainingTime);
         setStatus({
-          type: 'warning',
-          message: t('contact.form.cooldown', { seconds: remainingTime })
+          type: "warning",
+          message: t("contact.form.cooldown", { seconds: remainingTime }),
         });
         return;
       }
     }
 
     setIsSubmitting(true);
-    setStatus({ type: null, message: '' });
+    setStatus({ type: null, message: "" });
     const time = new Date();
 
     try {
@@ -96,42 +100,44 @@ const Contact = () => {
       );
 
       // Store send time in localStorage
-      localStorage.setItem('lastEmailSendTime', Date.now().toString());
+      localStorage.setItem("lastEmailSendTime", Date.now().toString());
       setCooldownRemaining(COOLDOWN_PERIOD / 1000);
 
       setStatus({
-        type: 'success',
-        message: t('contact.form.success')
+        type: "success",
+        message: t("contact.form.success"),
       });
-      
+
       setFormData({
-        name: '',
-        email: '',
-        message: ''
+        name: "",
+        email: "",
+        message: "",
       });
     } catch (error) {
-      console.error('Email sending failed:', error);
+      console.error("Email sending failed:", error);
       setStatus({
-        type: 'error',
-        message: t('contact.form.error')
+        type: "error",
+        message: t("contact.form.error"),
       });
     } finally {
       setIsSubmitting(false);
     }
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
 
   const formatCooldownTime = (seconds: number): string => {
     const minutes = Math.floor(seconds / 60);
     const remainingSeconds = seconds % 60;
-    return `${minutes}:${remainingSeconds.toString().padStart(2, '0')}`;
+    return `${minutes}:${remainingSeconds.toString().padStart(2, "0")}`;
   };
 
   return (
@@ -145,35 +151,40 @@ const Contact = () => {
           className="max-w-4xl mx-auto"
         >
           <h2 className="text-3xl font-bold text-textPrimary mb-8">
-            {t('contact.title')}
+            {t("contact.title")}
           </h2>
           <div className="grid md:grid-cols-2 gap-8">
             <div className="space-y-4">
-              <h3 className="text-xl font-semibold text-textPrimary">
-                {t('contact.subtitle')}
+              <h3 className="text-xl font-semibold text-textPrimary hidden md:block">
+                {t("contact.subtitle")}
               </h3>
-              <p className="text-textSecondary">
-                {t('contact.description')}
-              </p>
+              <p className="text-textSecondary">{t("contact.description")}</p>
               <div className="space-y-2">
-                <p className="text-secondary">{t('contact.email.label')}</p>
+                <p className="text-secondary">{t("contact.email.label")}</p>
                 <p className="text-textSecondary">{EMAIL}</p>
               </div>
               <div className="space-y-2">
-                <p className="text-secondary">{t('contact.location.label')}</p>
-                <p className="text-textSecondary">{t('contact.location.value')}</p>
+                <p className="text-secondary">{t("contact.location.label")}</p>
+                <p className="text-textSecondary">
+                  {t("contact.location.value")}
+                </p>
               </div>
             </div>
 
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form
+              onSubmit={handleSubmit}
+              className="space-y-4"
+              aria-label="Contact Form"
+            >
+              <h3 className="text-lg font-semibold mb-2">Contact Form</h3>
               {status.type && (
                 <div
                   className={`p-4 rounded-lg ${
-                    status.type === 'success'
-                      ? 'bg-green-100 text-green-800'
-                      : status.type === 'warning'
-                      ? 'bg-yellow-100 text-yellow-800'
-                      : 'bg-red-100 text-red-800'
+                    status.type === "success"
+                      ? "bg-green-100 text-green-800"
+                      : status.type === "warning"
+                      ? "bg-yellow-100 text-yellow-800"
+                      : "bg-red-100 text-red-800"
                   }`}
                 >
                   {status.message}
@@ -181,17 +192,20 @@ const Contact = () => {
               )}
               {cooldownRemaining > 0 && (
                 <div className="text-sm text-textSecondary text-center">
-                  {t('contact.form.nextSend')}: {formatCooldownTime(cooldownRemaining)}
+                  {t("contact.form.nextSend")}:{" "}
+                  {formatCooldownTime(cooldownRemaining)}
                 </div>
               )}
               <div>
                 <label htmlFor="name" className="block text-textPrimary mb-2">
-                  {t('contact.form.name')}
+                  {t("contact.form.name")}
                 </label>
                 <input
                   type="text"
                   id="name"
                   name="name"
+                  aria-label="Your Name"
+                  autoComplete="name"
                   value={formData.name}
                   onChange={handleChange}
                   className="w-full px-4 py-2 bg-tertiary text-textPrimary rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary"
@@ -201,12 +215,14 @@ const Contact = () => {
               </div>
               <div>
                 <label htmlFor="email" className="block text-textPrimary mb-2">
-                  {t('contact.form.email')}
+                  {t("contact.form.email")}
                 </label>
                 <input
                   type="email"
                   id="email"
                   name="email"
+                  aria-label="Your Email"
+                  autoComplete="email"
                   value={formData.email}
                   onChange={handleChange}
                   className="w-full px-4 py-2 bg-tertiary text-textPrimary rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary"
@@ -215,12 +231,17 @@ const Contact = () => {
                 />
               </div>
               <div>
-                <label htmlFor="message" className="block text-textPrimary mb-2">
-                  {t('contact.form.message')}
+                <label
+                  htmlFor="message"
+                  className="block text-textPrimary mb-2"
+                >
+                  {t("contact.form.message")}
                 </label>
                 <textarea
                   id="message"
                   name="message"
+                  aria-label="Your Message"
+                  autoComplete="off"
                   value={formData.message}
                   onChange={handleChange}
                   rows={4}
@@ -234,7 +255,9 @@ const Contact = () => {
                 disabled={isSubmitting || cooldownRemaining > 0}
                 className="btn-primary w-full disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                {isSubmitting ? t('contact.form.sending') : t('contact.form.submit')}
+                {isSubmitting
+                  ? t("contact.form.sending")
+                  : t("contact.form.submit")}
               </button>
             </form>
           </div>
@@ -244,4 +267,4 @@ const Contact = () => {
   );
 };
 
-export default Contact; 
+export default Contact;

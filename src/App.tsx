@@ -1,45 +1,48 @@
-import { useState, useCallback } from 'react';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import About from './components/About';
-import Experience from './components/Experience';
-import Projects from './components/Projects';
-import Contact from './components/Contact';
-import Expertise from './components/Expertise';
-import PageTransition from './components/PageTransition';
-import NavigationArrows from './components/NavigationArrows';
+import { useState, useCallback } from "react";
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import About from "./components/About";
+import Experience from "./components/Experience";
+import Projects from "./components/Projects";
+import Contact from "./components/Contact";
+import Expertise from "./components/Expertise";
+import PageTransition from "./components/PageTransition";
+import NavigationArrows from "./components/NavigationArrows";
 
 function App() {
-  const [currentPage, setCurrentPage] = useState('home');
+  const [currentPage, setCurrentPage] = useState("home");
   const [isTransitioning, setIsTransitioning] = useState(false);
 
-  const handlePageChange = useCallback((page: string) => {
-    if (page === currentPage || isTransitioning) return;
-    
-    setIsTransitioning(true);
-    setCurrentPage(page);
-    
-    // Reset transition state after animation
-    const timer = setTimeout(() => {
-      setIsTransitioning(false);
-    }, 300);
+  const handlePageChange = useCallback(
+    (page: string) => {
+      if (page === currentPage || isTransitioning) return;
 
-    return () => clearTimeout(timer);
-  }, [currentPage, isTransitioning]);
+      setIsTransitioning(true);
+      setCurrentPage(page);
+
+      // Reset transition state after animation
+      const timer = setTimeout(() => {
+        setIsTransitioning(false);
+      }, 300);
+
+      return () => clearTimeout(timer);
+    },
+    [currentPage, isTransitioning]
+  );
 
   const renderPage = () => {
     switch (currentPage) {
-      case 'home':
+      case "home":
         return <Hero onPageChange={handlePageChange} />;
-      case 'about':
+      case "about":
         return <About />;
-      case 'expertise':
+      case "expertise":
         return <Expertise />;
-      case 'experience':
+      case "experience":
         return <Experience />;
-      case 'projects':
+      case "projects":
         return <Projects />;
-      case 'contact':
+      case "contact":
         return <Contact />;
       default:
         return <Hero onPageChange={handlePageChange} />;
@@ -47,7 +50,10 @@ function App() {
   };
 
   return (
-    <div className="h-screen bg-gradient-to-b from-primary via-primary to-primary overflow-hidden">
+    <div
+      className="h-screen bg-gradient-to-b from-primary via-primary to-primary overflow-hidden pb-safe md:pb-3"
+      style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
+    >
       {/* Background Pattern */}
       <div className="fixed inset-0 w-full h-full">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:14px_24px]" />
@@ -58,12 +64,18 @@ function App() {
       </div>
 
       <Navbar currentPage={currentPage} onPageChange={handlePageChange} />
-      <main className="relative h-[calc(100vh-4rem)]">
+      <main
+        className="relative"
+        style={{ height: "calc(100vh - 4rem - env(safe-area-inset-bottom))" }}
+      >
         <PageTransition currentPage={currentPage}>
           {renderPage()}
         </PageTransition>
       </main>
-      <NavigationArrows currentPage={currentPage} onPageChange={handlePageChange} />
+      <NavigationArrows
+        currentPage={currentPage}
+        onPageChange={handlePageChange}
+      />
     </div>
   );
 }
